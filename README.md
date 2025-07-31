@@ -1,62 +1,165 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Student Result & GPA Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Blade](https://img.shields.io/badge/Blade-F7523F?style=for-the-badge&logo=laravel&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=apache&logoColor=white)
 
-## About Laravel
+A mini web-based application built with Laravel and Blade templates, designed to assist instructors in managing student course scores, calculating letter grades, determining GPA, and displaying a sorted list of students.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* **Instructor Authentication:** Secure login and registration for instructors (powered by Laravel Breeze).
+* **Student Management:**
+    * Add new student records.
+    * Edit existing student details and their course scores.
+    * Delete student records.
+* **Course Score Entry:** Input scores (0-100) for each student per course.
+* **Automatic Letter Grade Calculation:** Instantly calculates and displays letter grades (A, B, C, D, F) based on scores.
+* **GPA Calculation:** Automatically calculates the Grade Point Average for each student based on all their enrolled courses and scores.
+* **Sorted Student List:** Displays a comprehensive list of all students, dynamically sorted by their calculated GPA in descending order.
+* **Responsive UI:** Built with Tailwind CSS for a clean and adaptive user interface.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Technologies Used
 
-## Learning Laravel
+* **Backend:**
+    * Laravel 10.x (PHP Framework)
+    * PHP 8.2+
+    * MySQL (Database)
+* **Frontend:**
+    * Laravel Blade (Templating Engine)
+    * Tailwind CSS (Utility-first CSS Framework)
+    * JavaScript (for dynamic grade updates)
+* **Development Tools:**
+    * Composer (PHP Dependency Manager)
+    * NPM / Yarn (Node.js Package Manager)
+    * Vite (Frontend Build Tool)
+    * XAMPP (Local Server Environment: Apache, MySQL, PHP)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📦 Installation Guide
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Follow these steps to get the project up and running on your local machine.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
 
-## Laravel Sponsors
+Before you begin, ensure you have the following installed:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* **XAMPP:** (or a similar local server environment like Laragon, Valet, Docker with Sail)
+    * Apache (for web server)
+    * MySQL (for database)
+    * PHP (8.2 or higher)
+* **Composer:** [Get Composer](https://getcomposer.org/download/)
+* **Node.js & npm (or Yarn):** [Download Node.js](https://nodejs.org/en/download/) (npm is included)
 
-### Premium Partners
+### Steps
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/Tovas7/student-gpa-system.git](https://github.com/Tovas7/student-gpa-system.git)
+    cd student-gpa-system
+    ```
 
-## Contributing
+2.  **Install PHP Dependencies:**
+    ```bash
+    composer install
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3.  **Set up Environment File:**
+    Create a copy of the `.env.example` file and name it `.env`:
+    ```bash
+    cp .env.example .env
+    ```
 
-## Code of Conduct
+4.  **Generate Application Key:**
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5.  **Configure Database:**
+    Open your `.env` file and update the database credentials. Ensure your MySQL server (via XAMPP) is running.
 
-## Security Vulnerabilities
+    ```dotenv
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=student_gpa_db # You can choose any name
+    DB_USERNAME=root         # Your MySQL username (default for XAMPP is 'root')
+    DB_PASSWORD=             # Your MySQL password (default for XAMPP is empty)
+    ```
+    **Important:** Create the database (`student_gpa_db` or your chosen name) in your MySQL server (e.g., using phpMyAdmin accessible via XAMPP control panel).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6.  **Install Frontend Dependencies:**
+    ```bash
+    npm install # or yarn install
+    ```
 
-## License
+7.  **Run Database Migrations:**
+    This will create all the necessary tables in your database (users, students, courses, student_course pivot).
+    ```bash
+    php artisan migrate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# student-gpa-system
+8.  **Seed Initial Data (Optional but Recommended):**
+    This will create a default user (`test@example.com` with password `password`) and some sample courses.
+    ```bash
+    php artisan db:seed
+    ```
+
+9.  **Start Development Servers:**
+    You'll need two separate terminal windows for this:
+
+    * **Terminal 1 (Laravel Server):**
+        ```bash
+        php artisan serve
+        ```
+        This will typically run on `http://127.0.0.1:8000`.
+
+    * **Terminal 2 (Vite for Frontend Assets):**
+        ```bash
+        npm run dev # or yarn dev
+        ```
+        Keep this running in the background while developing to compile your CSS and JS changes.
+
+## 🚦 Usage
+
+1.  **Access the Application:** Open your web browser and navigate to `http://127.0.0.1:8000`.
+2.  **Login/Register:**
+    * If you ran `php artisan db:seed`, you can log in with:
+        * **Email:** `test@example.com`
+        * **Password:** `password`
+    * Otherwise, click "Register" to create a new instructor account.
+3.  **Navigate to Students:** After logging in, you will see a "Students" link in the navigation bar. Click on it to access the student management interface.
+4.  **Manage Students:**
+    * Use the "Add New Student" button to create new student records.
+    * Click "Edit" next to an existing student to update their details and course scores.
+    * Enter scores (0-100) for courses; the letter grade will update dynamically.
+    * The main student list will automatically sort students by their calculated GPA.
+
+## 📸 Screenshots
+
+*(Replace this section with actual screenshots of your application)*
+
+* **Login Page:**
+    ![Login Page](https://placehold.co/600x400/E0E0E0/000000?text=Login+Page)
+* **Student List (Dashboard):**
+    ![Student List](https://placehold.co/600x400/E0E0E0/000000?text=Student+List)
+* **Add/Edit Student Form:**
+    ![Add/Edit Student Form](https://placehold.co/600x400/E0E0E0/000000?text=Student+Form)
+
+## 🤝 Contributing
+
+Contributions are welcome! If you find a bug or have a feature request, please open an issue. If you'd like to contribute code, please fork the repository and create a pull request.
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE.md).
+
+## 📧 Contact
+
+For any inquiries or feedback, please reach out to:
+
+* **Author:** Tovas7
+* **GitHub:** [https://github.com/Tovas7](https://github.com/Tovas7)
+* **Email:** raphaeltovas6@gmail.com
