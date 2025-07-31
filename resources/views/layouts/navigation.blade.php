@@ -19,6 +19,10 @@
                     <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.index')">
                         {{ __('Students') }}
                     </x-nav-link>
+                    {{-- ADDED: Courses Navigation Link for Desktop --}}
+                    <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.index')">
+                        {{ __('Courses') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -77,6 +81,10 @@
             {{-- ADDED: Students Navigation Link for Responsive Menu --}}
             <x-responsive-nav-link :href="route('students.index')" :active="request()->routeIs('students.index')">
                 {{ __('Students') }}
+            </x-responsive-nav-link>
+            {{-- ADDED: Courses Navigation Link for Responsive Menu --}}
+            <x-responsive-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.index')">
+                {{ __('Courses') }}
             </x-responsive-nav-link>
         </div>
 
